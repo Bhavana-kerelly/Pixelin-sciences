@@ -353,7 +353,7 @@ export default function Home() {
           <a href="#hero" className="hover:text-accent transition-colors duration-300">
             Home
           </a>
-          <a href="#about" class="hover:text-accent transition-colors duration-300">
+          <a href="#about" className="hover:text-accent transition-colors duration-300">
             About Us
           </a>
 
