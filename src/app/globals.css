@@ -1,17 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1a6b3a;
-  --color-primary-light: #28844b;
-  --color-primary-dark: #114a27;
-  --color-primary-muted: rgba(26, 107, 58, 0.1);
-  --color-accent: #d4a017;
-  --color-accent-light: #ecb830;
-  --color-accent-dark: #a87c0e;
-  --color-accent-muted: rgba(212, 160, 23, 0.1);
-  --color-darkBg: #0a1f0f;
-  --color-lightBg: #f4f9f0;
-  --color-panelBg: rgba(10, 31, 15, 0.8);
+  --color-primary: #001F4D;
+  --color-primary-light: #003366;
+  --color-primary-dark: #001a3d;
+  --color-primary-muted: rgba(0, 31, 77, 0.1);
+  --color-accent: #FF6633;
+  --color-accent-light: #FF8855;
+  --color-accent-dark: #CC5522;
+  --color-accent-muted: rgba(255, 102, 51, 0.1);
+  --color-secondary: #52C452;
+  --color-secondary-light: #6FD46F;
+  --color-secondary-dark: #3AA43A;
+  --color-secondary-muted: rgba(82, 196, 82, 0.1);
+  --color-darkBg: #001F4D;
+  --color-lightBg: #f8fafc;
+  --color-panelBg: rgba(0, 31, 77, 0.85);
   
   --font-headline: var(--font-playfair), serif;
   --font-body: var(--font-inter), sans-serif;
@@ -40,14 +44,14 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a1f0f;
+  background: #001F4D;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1a6b3a;
+  background: #FF6633;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #d4a017;
+  background: #FF8855;
 }
 
 /* Glassmorphism helpers */
@@ -59,10 +63,10 @@
 }
 
 .glass-card-dark {
-  background: rgba(10, 31, 15, 0.75);
+  background: rgba(0, 31, 77, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(26, 107, 58, 0.2);
+  border: 1px solid rgba(255, 102, 51, 0.2);
 }
 
 /* Staggered Animations */

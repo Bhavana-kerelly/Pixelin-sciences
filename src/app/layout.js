@@ -23,6 +23,9 @@ export const metadata = {
   title: "Pixelin Sciences Pvt Ltd | Developed with Science. Formulated with Precision.",
   description: "Established in 2023, Pixelin Sciences Pvt Ltd (PSPL) provides innovative agrochemical solutions, eco-friendly fertilizers, pesticides, and crop protection systems across Telangana & Andhra Pradesh.",
   keywords: "PSPL, Pixelin Sciences, Agrochemical Hyderabad, Pesticides Telangana, Bio Fertilizers Andhra Pradesh, Crop Protection, Farming Telangana",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -39,7 +42,7 @@ export default function RootLayout({ children }) {
           precedence="default"
         />
       </head>
-      <body class="bg-white text-gray-800 antialiased overflow-x-hidden">
+      <body className="bg-white text-gray-800 antialiased overflow-x-hidden">
         {children}
       </body>
     </html>

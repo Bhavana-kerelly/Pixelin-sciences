@@ -306,17 +306,7 @@ export default function Home() {
     e.target.reset();
   };
 
-  // --- Programmatic Filmstrip generation ---
-  const filmstripImages = useMemo(() => {
-    const images = [];
-    const targetCount = 60;
-    for (let j = 0; j < targetCount; j++) {
-      const frameIndex = Math.round(1 + (j * (272 - 1)) / (targetCount - 1));
-      const frameNum = String(frameIndex).padStart(3, "0");
-      images.push(`/framesss/ezgif-frame-${frameNum}.jpg`);
-    }
-    return [...images, ...images]; // Doubled for seamless loop
-  }, []);
+
 
   return (
     <>
@@ -331,18 +321,20 @@ export default function Home() {
       >
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center border border-accent/30 shadow-md group-hover:scale-105 transition-transform duration-300">
-            <i className="fa-solid fa-leaf text-accent text-lg"></i>
-          </div>
+          <img 
+            src="/logo.png" 
+            alt="Pixelin Sciences Logo" 
+            className="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
+          />
           <div>
             <span
               className={`font-headline font-bold text-lg md:text-xl tracking-tight block transition-colors duration-300 ${
                 isNavbarScrolled ? "text-primary-dark" : "text-white"
-              } group-hover:text-accent`}
+              } group-hover:text-accent hidden sm:block`}
             >
               Pixelin Sciences
             </span>
-            <span className="font-label text-[10px] tracking-widest text-accent uppercase block leading-none">
+            <span className="font-label text-[10px] tracking-widest text-accent uppercase block leading-none hidden sm:block">
               Pvt Ltd
             </span>
           </div>
@@ -463,11 +455,12 @@ export default function Home() {
         >
           <div>
             <div className="flex justify-between items-center mb-8">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center border border-accent/20">
-                  <i class="fa-solid fa-leaf text-accent"></i>
-                </div>
-                <span class="font-headline font-bold text-md tracking-tight">Pixelin Sciences</span>
+              <div className="flex items-center gap-3">
+                <img 
+                  src="/logo.png" 
+                  alt="Pixelin Sciences Logo" 
+                  className="h-10 w-auto"
+                />
               </div>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -638,7 +631,7 @@ export default function Home() {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(to bottom, rgba(10,31,15,0.7) 0%, rgba(10,31,15,0.35) 50%, rgba(10,31,15,0.9) 100%)",
+              "linear-gradient(to bottom, rgba(0,31,77,0.7) 0%, rgba(0,31,77,0.35) 50%, rgba(0,31,77,0.9) 100%)",
             zIndex: 1,
           }}
         ></div>
@@ -684,27 +677,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ==================== SECTION 2: FRAMES FILMSTRIP ==================== */}
-      <section
-        id="frame-strip"
-        className="bg-darkBg py-4 border-y border-primary-dark/40 overflow-hidden h-[180px]"
-        style={{
-          maskImage: "linear-gradient(to right,transparent,black 8%,black 92%,transparent)",
-          WebkitMaskImage: "linear-gradient(to right,transparent,black 8%,black 92%,transparent)",
-        }}
-      >
-        <div className="strip-track animate-scroll flex gap-2 w-max">
-          {filmstripImages.map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt={`Frame ${i}`}
-              className="h-[160px] w-[240px] rounded-lg object-cover flex-shrink-0"
-              loading="lazy"
-            />
-          ))}
-        </div>
-      </section>
+
 
       {/* ==================== SECTION 3: ABOUT US ==================== */}
       <section id="about" className="py-24 px-6 md:px-12 bg-lightBg relative overflow-hidden">
@@ -761,7 +734,7 @@ export default function Home() {
                   Your browser does not support HTML5 video.
                 </video>
                 <div className="absolute bottom-4 left-4 glass-card px-3 py-1.5 rounded-lg flex items-center gap-2 text-white text-xs">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
                   <span>Root Journey Video</span>
                 </div>
               </div>
@@ -784,7 +757,7 @@ export default function Home() {
 
             <div className="reveal p-8 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-start gap-4">
               <div className="w-12 h-12 rounded-xl bg-accent-muted flex items-center justify-center text-accent text-xl">
-                <i class="fa-solid fa-users-gear"></i>
+                <i className="fa-solid fa-users-gear"></i>
               </div>
               <div>
                 <h3 className="font-headline font-bold text-lg text-primary-dark mb-1">
@@ -801,7 +774,7 @@ export default function Home() {
                 <i className="fa-solid fa-shield-halved"></i>
               </div>
               <div>
-                <h3 class="font-headline font-bold text-lg text-primary-dark mb-1">
+                <h3 className="font-headline font-bold text-lg text-primary-dark mb-1">
                   Protecting Crops
                 </h3>
                 <p className="font-body text-sm text-gray-500">
@@ -857,16 +830,16 @@ export default function Home() {
                 <h3 className="font-headline font-bold text-xl mb-4">Pesticides</h3>
                 <ul className="font-body text-sm text-gray-300 space-y-2 mb-8">
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Insecticides
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span> Insecticides
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Fungicides
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span> Fungicides
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Herbicides
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span> Herbicides
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Plant Growth Regulators (PGR)
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span> Plant Growth Regulators (PGR)
                   </li>
                 </ul>
               </div>
@@ -923,7 +896,7 @@ export default function Home() {
                 href="#crop-solutions"
                 className="text-accent hover:text-accent-light font-label text-xs uppercase font-bold tracking-wider flex items-center gap-1"
               >
-                View Solutions <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                View Solutions <i className="fa-solid fa-chevron-right text-[10px]"></i>
               </a>
             </div>
 
@@ -1111,7 +1084,7 @@ export default function Home() {
           style={{
             position: "absolute",
             inset: 0,
-            background: "rgba(10,31,15,0.78)",
+            background: "rgba(0,31,77,0.78)",
             zIndex: 1,
           }}
         ></div>
@@ -1196,7 +1169,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-headline font-bold text-lg text-primary-dark">Soil Health First</h4>
-                    <p class="font-body text-sm text-gray-600 leading-relaxed font-light">
+                    <p className="font-body text-sm text-gray-600 leading-relaxed font-light">
                       Enrich soil with organic inputs that improve fertility and microbial biology
                       season after season.
                     </p>
@@ -1636,9 +1609,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-6">
             <a href="#hero" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center border border-accent/20">
-                <i className="fa-solid fa-leaf text-accent text-lg"></i>
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="Pixelin Sciences Logo" 
+                className="h-10 w-auto"
+              />
               <div>
                 <span className="font-headline font-bold text-lg tracking-tight text-white block">
                   Pixelin Sciences
@@ -1692,7 +1667,7 @@ export default function Home() {
           </div>
 
           <div>
-            <h4 class="font-headline font-bold text-lg mb-6 border-b-2 border-accent pb-2 w-max text-accent">
+            <h4 className="font-headline font-bold text-lg mb-6 border-b-2 border-accent pb-2 w-max text-accent">
               Quick Links
             </h4>
             <ul className="font-body text-sm text-gray-400 space-y-3">
@@ -1730,7 +1705,7 @@ export default function Home() {
           </div>
 
           <div>
-            <h4 class="font-headline font-bold text-lg mb-6 border-b-2 border-accent pb-2 w-max text-accent">
+            <h4 className="font-headline font-bold text-lg mb-6 border-b-2 border-accent pb-2 w-max text-accent">
               Our Products
             </h4>
             <ul className="font-body text-sm text-gray-400 space-y-3">
@@ -1770,7 +1745,7 @@ export default function Home() {
           </div>
 
           <div>
-            <h4 class="font-headline font-bold text-lg mb-6 border-b-2 border-accent pb-2 w-max text-accent">
+            <h4 className="font-headline font-bold text-lg mb-6 border-b-2 border-accent pb-2 w-max text-accent">
               Crops Matrix
             </h4>
             <ul className="font-body text-sm text-gray-400 space-y-3">
