@@ -16,7 +16,7 @@
   --color-darkBg: #001F4D;
   --color-lightBg: #f8fafc;
   --color-panelBg: rgba(0, 31, 77, 0.85);
-  
+
   --font-headline: var(--font-playfair), serif;
   --font-body: var(--font-inter), sans-serif;
   --font-label: var(--font-space-grotesk), sans-serif;
@@ -24,8 +24,13 @@
 
 /* Custom Scroll animations */
 @keyframes scrollLeft {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes fadeUp {
@@ -33,6 +38,7 @@
     opacity: 0;
     transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -43,13 +49,16 @@
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #001F4D;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #FF6633;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #FF8855;
 }
@@ -75,10 +84,21 @@
   opacity: 0;
 }
 
-.delay-1 { animation-delay: 0.15s; }
-.delay-2 { animation-delay: 0.35s; }
-.delay-3 { animation-delay: 0.55s; }
-.delay-4 { animation-delay: 0.75s; }
+.delay-1 {
+  animation-delay: 0.15s;
+}
+
+.delay-2 {
+  animation-delay: 0.35s;
+}
+
+.delay-3 {
+  animation-delay: 0.55s;
+}
+
+.delay-4 {
+  animation-delay: 0.75s;
+}
 
 /* Custom Reveal on scroll utilities */
 .reveal {

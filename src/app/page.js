@@ -313,24 +313,22 @@ export default function Home() {
       {/* ==================== HEADER / NAVIGATION ==================== */}
       <nav
         id="navbar"
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out px-6 md:px-12 flex justify-between items-center ${
-          isNavbarScrolled
-            ? "bg-white text-gray-800 shadow-md py-3"
-            : "bg-transparent text-white py-5"
-        }`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out px-6 md:px-12 flex justify-between items-center ${isNavbarScrolled
+          ? "bg-white text-gray-800 shadow-md py-3"
+          : "bg-transparent text-white py-5"
+          }`}
       >
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-3 group">
-          <img 
-            src="/logo.png" 
-            alt="Pixelin Sciences Logo" 
+          <img
+            src="/logo.png"
+            alt="Pixelin Sciences Logo"
             className="h-12 w-auto group-hover:scale-105 transition-transform duration-300"
           />
           <div>
             <span
-              className={`font-headline font-bold text-lg md:text-xl tracking-tight block transition-colors duration-300 ${
-                isNavbarScrolled ? "text-primary-dark" : "text-white"
-              } group-hover:text-accent hidden sm:block`}
+              className={`font-headline font-bold text-lg md:text-xl tracking-tight block transition-colors duration-300 ${isNavbarScrolled ? "text-primary-dark" : "text-white"
+                } group-hover:text-accent hidden sm:block`}
             >
               Pixelin Sciences
             </span>
@@ -449,16 +447,15 @@ export default function Home() {
 
         {/* Mobile Drawer */}
         <div
-          className={`fixed top-0 right-0 h-screen w-80 bg-darkBg text-white z-50 transform transition-transform duration-500 ease-in-out shadow-2xl flex flex-col justify-between py-8 px-6 ${
-            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`fixed top-0 right-0 h-screen w-80 bg-darkBg text-white z-50 transform transition-transform duration-500 ease-in-out shadow-2xl flex flex-col justify-between py-8 px-6 ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
         >
           <div>
             <div className="flex justify-between items-center mb-8">
               <div className="flex items-center gap-3">
-                <img 
-                  src="/logo.png" 
-                  alt="Pixelin Sciences Logo" 
+                <img
+                  src="/logo.png"
+                  alt="Pixelin Sciences Logo"
                   className="h-10 w-auto"
                 />
               </div>
@@ -495,15 +492,13 @@ export default function Home() {
                 >
                   Products{" "}
                   <i
-                    className={`fa-solid fa-chevron-down text-xs ml-2 transition-transform duration-200 ${
-                      isPesticidesAccordionOpen ? "rotate-180" : ""
-                    }`}
+                    className={`fa-solid fa-chevron-down text-xs ml-2 transition-transform duration-200 ${isPesticidesAccordionOpen ? "rotate-180" : ""
+                      }`}
                   ></i>
                 </button>
                 <div
-                  className={`${
-                    isPesticidesAccordionOpen ? "flex" : "hidden"
-                  } flex-col pl-4 mt-2 gap-2 text-base text-gray-300`}
+                  className={`${isPesticidesAccordionOpen ? "flex" : "hidden"
+                    } flex-col pl-4 mt-2 gap-2 text-base text-gray-300`}
                 >
                   <a
                     href="#products"
@@ -535,15 +530,13 @@ export default function Home() {
                 >
                   Crops{" "}
                   <i
-                    className={`fa-solid fa-chevron-down text-xs ml-2 transition-transform duration-200 ${
-                      isCropsAccordionOpen ? "rotate-180" : ""
-                    }`}
+                    className={`fa-solid fa-chevron-down text-xs ml-2 transition-transform duration-200 ${isCropsAccordionOpen ? "rotate-180" : ""
+                      }`}
                   ></i>
                 </button>
                 <div
-                  className={`${
-                    isCropsAccordionOpen ? "flex" : "hidden"
-                  } flex-col pl-4 mt-2 gap-2 text-base text-gray-300`}
+                  className={`${isCropsAccordionOpen ? "flex" : "hidden"
+                    } flex-col pl-4 mt-2 gap-2 text-base text-gray-300`}
                 >
                   <button
                     onClick={() => selectCropAndScroll("paddy")}
@@ -696,7 +689,7 @@ export default function Home() {
                 </span>
               </div>
               <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold text-primary-dark mb-6 leading-tight">
-                Welcome to Pixelin Sciences Pvt Ltd (PSPL)
+                Welcome to Pixelin Sciences
               </h2>
               <p className="font-body text-gray-700 text-sm md:text-base leading-relaxed mb-6 font-light">
                 We are committed to revolutionizing agriculture by providing innovative
@@ -953,11 +946,10 @@ export default function Home() {
                 <button
                   key={cropName}
                   onClick={() => setActiveTab(cropName)}
-                  className={`tab-btn flex-1 py-3 px-4 rounded-xl font-label font-bold text-sm transition-all duration-300 capitalize ${
-                    activeTab === cropName
-                      ? "bg-primary text-white shadow-md"
-                      : "text-gray-600 hover:text-primary hover:bg-white/40"
-                  }`}
+                  className={`tab-btn flex-1 py-3 px-4 rounded-xl font-label font-bold text-sm transition-all duration-300 capitalize ${activeTab === cropName
+                    ? "bg-primary text-white shadow-md"
+                    : "text-gray-600 hover:text-primary hover:bg-white/40"
+                    }`}
                 >
                   {cropName}
                 </button>
@@ -1609,9 +1601,9 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-6">
             <a href="#hero" className="flex items-center gap-3">
-              <img 
-                src="/logo.png" 
-                alt="Pixelin Sciences Logo" 
+              <img
+                src="/logo.png"
+                alt="Pixelin Sciences Logo"
                 className="h-10 w-auto"
               />
               <div>
